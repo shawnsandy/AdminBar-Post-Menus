@@ -52,10 +52,18 @@ class apm_plugin {
 /**
  * Initalize the plugin
  */
-add_action('init', function(){
- $adm_plugin = new apm_plugin();
+add_action('init', function() {
 
-});
+            //** makes it plugabble ***//
+            if (!function_exists('apm_menus')):
+                $adm_plugin = new apm_plugin();
+            endif;
+        });
+
+
+
+
+
 
 
 
