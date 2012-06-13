@@ -3,7 +3,7 @@
 /*
   Plugin Name: Adminbar-Post-Menus
   Plugin URI: http://shawnsandy.com
-  Description: A simple php autoload manager for wordpress, built with PHP-Autoload-Manager http://bashar.alfallouji.com/PHP-Autoload-Manager/. AL-Manager allows you to easily extend the power of WordPress using Object Oriented PHP; classes and libraries.
+  Description: Adds menu list of post by status to your admin bar, quickly jump to and and from post easily from the admin menu.
   Author: Shawn Sandy
   Author URI: http://shawnsandy.com
   Version: 1.1.1
@@ -18,11 +18,12 @@ class apm_plugin {
 
     public function __construct() {
         $this->init();
-        add_action('init', array($this, 'init'));
+        //add_action('init', array($this, 'init'));
     }
 
     public function init() {
         $this->load();
+         AdminbarPostMenus::add_menus()->nodes();
     }
 
     public function load() {
@@ -42,6 +43,8 @@ class apm_plugin {
 
     public function menus($post_status = 'publish'){
 
+
+
     }
 
 }
@@ -51,6 +54,7 @@ class apm_plugin {
  */
 add_action('init', function(){
  $adm_plugin = new apm_plugin();
+
 });
 
 
