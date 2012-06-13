@@ -20,8 +20,9 @@ Features
 * No complicated options menu(s)
 * Plugabble
 * Easy to customize in your theme functions
+* Modular
 
-I really tried to keep this plugin simple, no plugin options, you can roll your own if thats you thing or modify it in your theme functions file.
+I really tried to keep this plugin simple and modular, no plugin options; roll your own if thats you thing or modify it in your theme functions file.
 
 
 == Installation ==
