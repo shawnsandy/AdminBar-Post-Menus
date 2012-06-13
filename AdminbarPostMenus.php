@@ -7,13 +7,6 @@
  * @link http://shawnsandy.com
  */
 
-/**
- * Description of AdminbarPostMenus
- *
- * @author studio
- */
-//include the class
-
 
 class AdminbarPostMenus {
 
@@ -60,7 +53,8 @@ class AdminbarPostMenus {
 
 
         foreach ($this->post_types as $post_type => $title) {
-
+            // TODO localize note titles
+            // man I really hate localization
             if ($this->display_published):
                 /** Display published pages * */
                 Ext_Post_Menus::add()->set_node_id($post_type . '_menu')->set_node_title(ucfirst($title))

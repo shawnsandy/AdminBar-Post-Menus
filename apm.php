@@ -6,15 +6,12 @@
   Description: Adds menu list of post by status to your admin bar, quickly jump to and and from post easily from the admin menu.
   Author: Shawn Sandy
   Author URI: http://shawnsandy.com
-  Version: 1.1.1
+  Version: 0.1
  */
 
 include_once dirname(__FILE__) . '/AdminbarPostMenus.php';
 
 class apm_plugin {
-
-
-
 
     public function __construct() {
         $this->init();
@@ -23,7 +20,10 @@ class apm_plugin {
 
     public function init() {
         $this->load();
-         AdminbarPostMenus::add_menus()->nodes();
+        /**
+         * Add the default menus
+         */
+        AdminbarPostMenus::add_menus()->nodes();
     }
 
     public function load() {
@@ -34,6 +34,7 @@ class apm_plugin {
     }
 
     public function apm_admin_notice() {
+        //TODO fix $msg localization.
         $msg = __('<div id="messages" class="error"><p>
        Admnbar-PostMenus requires the PHP <code>AL.Manager plugin</code>,
        http://autoloadmanager.shawnsandy.com, please install or disable the plugin
@@ -41,9 +42,7 @@ class apm_plugin {
         echo $msg;
     }
 
-    public function menus($post_status = 'publish'){
-
-
+    public function menus($post_status = 'publish') {
 
     }
 
