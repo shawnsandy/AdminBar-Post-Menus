@@ -23,7 +23,7 @@ class apm_plugin {
         /**
          * Add the default menus
          */
-        AdminbarPostMenus::add_menus()->nodes();
+        //AdminbarPostMenus::add_menus()->nodes();
     }
 
     public function load() {
@@ -42,9 +42,6 @@ class apm_plugin {
         echo $msg;
     }
 
-    public function menus($post_status = 'publish') {
-
-    }
 
 }
 

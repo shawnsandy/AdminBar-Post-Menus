@@ -18,31 +18,43 @@ class AdminbarPostMenus {
             $list_count = 5;
 
     public function set_display_schedule($display_schedule) {
-        $this->display_schedule = $display_schedule;
+       $this->display_schedule = $display_schedule;
+       return $this;
+
     }
 
     public function set_display_published($display_published) {
         $this->display_published = $display_published;
+        return $this;
     }
 
     public function set_display_pending($display_pending) {
         $this->display_pending = $display_pending;
+        return $this;
     }
 
     public function set_display_draft($display_draft) {
         $this->display_draft = $display_draft;
+        return $this;
     }
 
     public function set_post_types($post_types) {
         $this->post_types = $post_types;
+        return $this;
     }
 
     public function set_list_count($list_count) {
         $this->list_count = $list_count;
+        return $this;
     }
 
+    /**
+     * factory pattern
+     * @return type
+     */
     public static function add_menus(){
-        return $apm = new AdminbarPostMenus();
+        $apm = new AdminbarPostMenus();
+        return $apm;
     }
 
     public function __construct() {
