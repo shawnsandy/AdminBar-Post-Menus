@@ -20,10 +20,6 @@ class apm_plugin {
 
     public function init() {
         $this->load();
-        /**
-         * Add the default menus
-         */
-        //AdminbarPostMenus::add_menus()->nodes();
     }
 
     public function load() {
@@ -52,7 +48,7 @@ add_action('init', function() {
 
             //** makes it plugabble ***//
             if (!function_exists('apm_menus')):
-                $adm_plugin = new apm_plugin();
+                $adm_plugin =  AdminbarPostMenus::add_menus()->nodes();;
             endif;
         });
 
