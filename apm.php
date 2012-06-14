@@ -6,7 +6,7 @@
   Description: Adds menu list of post by status to your admin bar, quickly jump to and and from post easily from the admin menu.
   Author: Shawn Sandy
   Author URI: http://shawnsandy.com
-  Version: 0.1
+  Version: 0.1.1
  */
 
 include_once dirname(__FILE__) . '/AdminbarPostMenus.php';
