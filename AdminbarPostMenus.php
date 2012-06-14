@@ -17,32 +17,62 @@ class AdminbarPostMenus {
             $post_types = array('post' => 'Posts', 'page' => 'Pages'),
             $list_count = 5;
 
+    /**
+     * Display Schedule post
+     * @param bool $display_schedule true/false
+     * @return \AdminbarPostMenus
+     */
     public function set_display_schedule($display_schedule) {
        $this->display_schedule = $display_schedule;
        return $this;
 
     }
 
+    /**
+     * Display publish post post
+     * @param bool $display_published true/false
+     * @return \AdminbarPostMenus
+     */
     public function set_display_published($display_published) {
         $this->display_published = $display_published;
         return $this;
     }
 
+    /**
+     * Display pending post
+     * @param bool $display_pending true/false
+     * @return \AdminbarPostMenus
+     */
     public function set_display_pending($display_pending) {
         $this->display_pending = $display_pending;
         return $this;
     }
 
+    /**
+     * Display Draft post
+     * @param bool $display_draft true/false
+     * @return \AdminbarPostMenus
+     */
     public function set_display_draft($display_draft) {
         $this->display_draft = $display_draft;
         return $this;
     }
 
+    /**
+     * Set your post types
+     * @param array $post_types array('post' => 'Posts', 'page' => 'Pages')
+     * @return \AdminbarPostMenus
+     */
     public function set_post_types($post_types) {
         $this->post_types = $post_types;
         return $this;
     }
 
+    /**
+     * Set the number of menu items to displas
+     * @param init $list_count - 5
+     * @return \AdminbarPostMenus
+     */
     public function set_list_count($list_count) {
         $this->list_count = $list_count;
         return $this;
@@ -61,6 +91,9 @@ class AdminbarPostMenus {
 
     }
 
+    /**
+     * Create the nodes
+     */
     public function nodes() {
 
 
