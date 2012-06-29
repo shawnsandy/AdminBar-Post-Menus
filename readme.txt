@@ -25,7 +25,7 @@ Features
 I really tried to keep this plugin simple and modular, no plugin options; roll your own if thats you thing or modify it in your theme functions file.
 
 
-Customize your Adminbar Post Menus drop this code in your functions.php file or the now popular way in you own "theme plugin"
+Customize your Adminbar Post Menus drop this code in your functions.php file or the now popular way in you own "theme plugin". Don't forget to modify the post_type array to match your custom post types. More documentation will be coming soon.
 
 `/**
  * Customize your Adminbar Post Menus
