@@ -6,8 +6,6 @@
  * @author shawnsandy
  * @link http://shawnsandy.com
  */
-
-
 class AdminbarPostMenus {
 
     private $display_published = true,
@@ -23,9 +21,8 @@ class AdminbarPostMenus {
      * @return \AdminbarPostMenus
      */
     public function set_display_schedule($display_schedule) {
-       $this->display_schedule = $display_schedule;
-       return $this;
-
+        $this->display_schedule = $display_schedule;
+        return $this;
     }
 
     /**
@@ -82,7 +79,7 @@ class AdminbarPostMenus {
      * factory pattern
      * @return type
      */
-    public static function add_menus(){
+    public static function add_menus() {
         $apm = new AdminbarPostMenus();
         return $apm;
     }
@@ -103,30 +100,28 @@ class AdminbarPostMenus {
             if ($this->display_published):
                 /** Display published pages * */
                 Ext_Post_Menus::add()->set_node_id($post_type . '_menu')->set_node_title(ucfirst($title))
-                        ->set_items($this->list_count)->set_post_type($post_type)->published($post_type, $this->list_count);
+                        ->set_parent_url(trailingslashit(admin_url())  . 'edit.php?post_type=' . $post_type)->set_items($this->list_count)->set_post_type($post_type)->menu_data($post_type);
             endif;
 
 
             if ($this->display_schedule):
                 Ext_Post_Menus::add()->set_node_id($post_type . '_schedule')->set_node_parent($post_type . '_menu')
-                        ->set_items($this->list_count)->set_node_title('SCHEDULE')->set_post_type($post_type)
-                    ->scheduled($post_type, $this->list_count);
+                        ->set_items($this->list_count)->set_node_title('Scheduled')->set_post_type($post_type)
+                        ->menu_data($post_type, 'future');
             endif;
 
 
             if ($this->display_pending):
                 Ext_Post_Menus::add()->set_node_id($post_type . '_pending')->set_node_parent($post_type . '_menu')
-                        ->set_node_title('PENDING')->set_post_type($post_type)->pending($post_type, $this->list_count);
+                        ->set_node_title('Pendings')->set_post_type($post_type)->menu_data($post_type, 'pending');
             endif;
 
             if ($this->display_draft):
                 Ext_Post_Menus::add()->set_node_id($post_type . '_draft')->set_node_parent($post_type . '_menu')
-                        ->set_items($this->list_count)->set_node_title('DRAFTS')
-                    ->set_post_type($post_type)->drafts($post_type,$this->list_count);
+                        ->set_items($this->list_count)->set_node_title('Drafts')
+                        ->set_post_type($post_type)->menu_data($post_type, 'draft');
             endif;
         }
     }
 
 }
-
-?>
