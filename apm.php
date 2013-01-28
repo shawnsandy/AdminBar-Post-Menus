@@ -49,11 +49,29 @@ function init_apm() {
     //** makes it plugabble ***//
     if (!function_exists('apm_menus')):
         $adm_plugin = AdminbarPostMenus::add_menus()->nodes();
-        ;
     endif;
 }
 
-;
+
+
+/**
+ * *****************************************************************************
+ * Customize Adminbar Post Menus
+ * *****************************************************************************
+ */
+function default_menus() {
+
+    //create an post_type array(post_type, menu_title);
+    $post_types = array('post' => "Posts",'pages' => 'Pages');
+
+    //load and run the class
+    $apmmenus = AdminbarPostMenus::add_menus()->set_list_count(5)->set_post_types($post_types)->nodes();
+    
+}
+
+// run the function on init;
+add_action('init', 'default_menus');
+
 
 
 
