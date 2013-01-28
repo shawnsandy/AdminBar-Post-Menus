@@ -6,7 +6,7 @@
   Description: Adds menu list of post by status to your admin bar, quickly jump to and and from post easily from the admin menu.
   Author: Shawn Sandy
   Author URI: http://shawnsandy.com
-  Version: 0.1.2
+  Version: 0.1.5
  */
 
 include_once dirname(__FILE__) . '/AdminbarPostMenus.php';
@@ -66,7 +66,7 @@ function default_menus() {
 
     //load and run the class
     $apmmenus = AdminbarPostMenus::add_menus()->set_list_count(5)->set_post_types($post_types)->nodes();
-    
+
 }
 
 // run the function on init;
